@@ -1,0 +1,25 @@
+﻿<Window x:Class="pa.imc.AddRoomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:contr="clr-namespace:pa.imc.Controls"
+        mc:Ignorable="d"
+        Title="Räume und Equipment" Height="600" Width="600">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Raum hinzufügen">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <contr:NeuenRaumAnlegen Grid.Column="0"/>
+                    <contr:EquipmentListe Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            
+        </TabControl>
+
+    </Grid>
+</Window>

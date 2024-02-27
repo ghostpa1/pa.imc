@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="pa.imc.Controls.EquipmentListe"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:pa.imc.viewmodel.ViewModels;assembly=pa.imc.viewmodel"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300">
+
+    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+        <TextBlock Text="Equipment wählen" FontSize="24" FontWeight="Bold" Margin="0 0 0 20" />
+
+        <Grid>
+            <!-- Überschriften -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DataGrid Name="ZeigeEquipmentListe" Grid.Row="1" ItemsSource="{Binding EquipmentCheckBoxes}" AutoGenerateColumns="False"
+                      HorizontalAlignment="Left" CanUserAddRows="False">
+                <!--<Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="Green"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>-->
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Gerät" Width="Auto" Binding="{Binding EquipmentName}"/>
+
+                    <DataGridTemplateColumn Header="Vorhanden" Width="Auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="nicht ausgewählt" IsChecked="{Binding IsSelected}" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </StackPanel>
+</UserControl>

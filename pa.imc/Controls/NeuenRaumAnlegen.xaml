@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="pa.imc.Controls.NeuenRaumAnlegen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:pa.imc.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+
+    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+        <TextBlock Text="Neuen Raum anlegen" FontSize="24" FontWeight="Bold" Margin="0 0 0 20" />
+
+        <!-- Hier kommt dein Grid oder ein anderes Container-Element -->
+        <Grid>
+            <!-- Hier kommen die Inhalte deines Grids -->
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Raumname kurz:" Margin="5"/>
+            <TextBox x:Name="RaumNameKurz"  Grid.Row="0" Grid.Column="1" Margin="5" 
+                     LostFocus="RaumNameKurz_LostFocus"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="Raumname lang:" Margin="5"/>
+            <TextBox x:Name="RaumNameLang" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+            <Button x:Name="Speichern" Width="Auto" Margin="5" Grid.Row="2" Grid.Column="1" 
+                    Content="Speichern" IsDefault="True" Click="Speichern_Click" IsEnabled="False"/>
+
+            <Button x:Name="Abbrechen" Width="Auto" Margin="5" Grid.Row="2" Grid.Column="0"
+                    Content="_Abbrechen"  Click="Abbrechen_Click" 
+                    IsCancel="True">
+                
+            </Button>
+            
+        </Grid>
+    </StackPanel>
+
+</UserControl>

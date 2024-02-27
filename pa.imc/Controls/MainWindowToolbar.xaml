@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="pa.imc.Controls.MainWindowToolbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:pa.imc.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="285.868" d:DesignWidth="748.35">
+
+
+    <ToolBarTray Height="50" Background="Transparent" HorizontalAlignment="Stretch">
+        <ToolBar BandIndex="1" HorizontalContentAlignment="Left" Background="Transparent" HorizontalAlignment="Left" >
+            <!-- Links ausgerichtete Gruppe -->
+            <ToolBarPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left">
+                <Button x:Name="Neuen_Raum_Anlegen" Content="Neuer Raum" Margin="5" Click="Neuen_Raum_Anlegen_Click"/>
+                <Button x:Name="Raum_Bearbeiten" Content="Räume bearbeiten" Margin="5"/>
+                <Button x:Name="Equip_anpassen" Content="Equipment anpassen" Margin="5"/>
+            </ToolBarPanel>
+        </ToolBar>
+
+        <!-- Rechts ausgerichtete Gruppe -->
+        <ToolBar  BandIndex="2" Background="Transparent" HorizontalAlignment="Right" Margin="2,0,0,0">
+            <ToolBarPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+                <Label Content="Farbschema" Height="27"/>
+                <ComboBox x:Name="ColorSchemeComboBox" SelectedIndex="1" Background="{x:Null}"
+                      SelectionChanged="ColorSchemeComboBox_SelectionChanged" Width="Auto" BorderBrush="{x:Null}" Opacity="0.99">
+                    <ComboBoxItem Content="Hell"/>
+                    <ComboBoxItem Content="Dunkel"/>
+                    <ComboBoxItem Content="Blau"/>
+                </ComboBox>
+            </ToolBarPanel>
+        </ToolBar>
+    </ToolBarTray>
+</UserControl>
